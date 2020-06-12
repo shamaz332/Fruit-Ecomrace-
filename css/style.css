@@ -1,0 +1,525 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*cliky button*/
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900");
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: .3em;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    padding: .5em 1.5em .75em;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn:active {
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+    margin-top: .25em;
+    padding-bottom: .5em;
+}
+
+.btn:active,
+.btn:focus {
+    outline: none;
+}
+
+.btn--blue {
+    background-color: #3498db;
+}
+
+.btn--green {
+    background-color: #1abc9c;
+}
+
+.btn--red {
+    background-color: #e65d4f;
+}
+
+.btn--lg {
+    font-size: 1.5em;
+}
+
+.btn--df {
+    font-size: 1.25em;
+}
+
+.btn--md {
+    font-size: 1em;
+}
+
+.btn--sm {
+    font-size: 0.75em;
+}
+
+/*end of clicky button*/
+
+/*riple effect css*/
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+/*end ofriple effect css*/
+
+a:hover {
+    text-decoration: none;
+}
+
+.languages span {
+    margin-left: 10px;
+}
+
+.Accounts span {
+    margin-right: 10px;
+}
+
+.pad-normal {
+    padding: 14px;
+
+}
+
+.pad-normal a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555555;
+}
+
+.pad-normal a:hover {
+
+    color: #66CC33;
+}
+
+.pad-normal i {
+    color: #66CC33;
+}
+
+.search {
+    background-color: white;
+    border-radius: 17px;
+}
+
+.search:hover {
+    border: 1px solid #66CC33;
+}
+
+.search input {
+    margin-left: 10px;
+    border: none;
+
+}
+
+.search a i {
+    margin-right: 10px;
+    color: #66CC33;
+
+}
+
+.logo_bar {
+
+    background-color: #F2F2F2;
+    padding: 30px;
+}
+
+.logo_img {
+    position: absolute;
+    left: 30%;
+}
+
+i {
+    margin-right: 5px;
+    color: #66CC33;
+}
+
+
+.card_details {
+    text-align: center;
+    background-color: white;
+    padding: 8px;
+    width: 60%;
+    margin-left: 130px;
+    border-radius: 30px;
+}
+
+.card_details a {
+    color: #555555;
+}
+
+.card_details a:hover {
+    color: #66CC33;
+}
+
+.margin-nav {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.bg-light {
+    background-color: white !important;
+}
+
+.margin-nav a {
+    color: #555555 !important;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 25px;
+}
+
+.margin-nav a:hover {
+    background-color: #66CC33;
+    color: white !important;
+    border: 1px solid #F2F2F2 !important;
+}
+
+#actives {
+    background-color: #66CC33;
+    color: white !important;
+    border: 1px solid #F2F2F2 !important;
+}
+
+.carousel-item h1 {
+    font-size: 150px;
+    font-weight: bold;
+    color: #F7FE09;
+}
+
+.carousel-item h2 {
+    font-size: 120px;
+    font-weight: bold;
+    color: #F7FE09;
+}
+
+.carousel-item a {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border: 5px solid #F7FE09;
+    color: white;
+
+}
+
+.carousel-item a:hover {
+    border: 5px solid white;
+    color: #F7FE09;
+
+}
+
+.carousel-caption {
+    margin-bottom: 120px;
+}
+
+.delevry {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.delevry i {
+    font-size: 30px;
+    border: 2px dotted #66CC33;
+    padding: 40px;
+    border-radius: 50%;
+}
+
+.delevry h5 {
+    margin-top: 30px;
+    font-weight: 400;
+    color: #555555;
+}
+
+.delevry p {
+    font-size: 14px;
+    color: #555555;
+}
+
+
+.hero-image {
+    /* The image used */
+    background-image: url(../src/ad1-1.jpg);
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.hero-image1 {
+    /* The image used */
+    background-image: url(../src/ad2.jpg);
+    height: 240px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.hero-image2 {
+    /* The image used */
+    background-image: url(../src/ad3.jpg);
+    height: 240px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.hero-image3 {
+    /* The image used */
+    background-image: url(../src/ad4.jpg);
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+/* Place text in the middle of the image */
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.hero-text h4 {
+    font-weight: bold;
+
+}
+
+.hero-text p {
+    margin-bottom: 70px;
+}
+
+.hero-text a {
+
+    padding: 5px 20px;
+    border: 5px solid white;
+    color: white;
+    border-radius: 30px;
+}
+
+.hero-text a:hover {
+
+
+    border: 5px solid yellow;
+    background-color: #66CC33;
+
+}
+
+
+.margin-top {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+.margin {
+    margin: 20px;
+}
+
+.hero-text1 {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.hero-text1 a {
+    margin-top: 20px;
+    padding: 5px 30px;
+    border: 5px solid white;
+    color: white;
+    border-radius: 30px;
+
+}
+
+.hero-text1 a:hover {
+    border: 5px solid yellow;
+    background-color: #66CC33;
+
+}
+
+.hero-text2 {
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.hero-text2 a {
+    padding: 5px 30px;
+    border: 5px solid white;
+    color: white;
+    border-radius: 30px;
+
+}
+
+.hero-text2 a:hover {
+    border: 5px solid yellow;
+    background-color: #66CC33;
+
+}
+
+.bg-color {
+    background-color: #2C2C2C;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 30px;
+}
+
+.bg-color p {
+    color: #999999;
+    padding: 5px;
+}
+
+.bg-color a {
+    color: #999999;
+    padding: 10px;
+}
+
+.bg-color a:hover {
+    color: #66CC33;
+}
+
+.bg-color li {
+    color: #66CC33;
+    padding: 5px;
+}
+
+.bg-color i {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.margin1 {
+    margin-top: 20px;
+}
+
+.img img {
+    width: 30px;
+    border-radius: 5px;
+
+}
+
+.img span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.margin-carousel {
+    margin-bottom: 100px;
+    top: 0;
+    height: 500px;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    background: #FFF;
+    border-bottom: 1px dotted #66CC33;
+}
+
+.margin-carousel #prev {
+    position: absolute;
+    top: 50%;
+}
+
+.margin-carousel #next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.margin-carousel i {
+    font-size: 30px;
+}
+
+#carousel img {
+    visibility: hidden;
+    /* hide images until carousel can handle them */
+    cursor: pointer;
+    /* otherwise it's not as obvious items can be clicked */
+}
+
+.headings h1 {
+    padding: 20px;
+    font-weight: bold;
+    color: #66CC33 !important;
+
+}
+
+.headings {
+    margin-top: 20px;
+}
+
+.amount {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: aqua;
+    
+}
+
+
+
+
+
+
