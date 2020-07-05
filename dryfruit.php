@@ -16,14 +16,14 @@
     <!--this is top bar-->
     <div class="container">
         <div class="row pad-normal">
-            <div class="col-md-6 text-left languages">
+            <div class="col-md-6 text-left languages d-none d-md-block">
                 <span><a href="#"><i class="fa fa-language"></i>English</a></span>
                 <span><a href="#"><i class="fa fa-money"></i>Rupee</a></span>
             </div>
             <div class="col-md-6 text-right Accounts">
                 <span><a href="admin/index.php"><i class="fa fa-user"></i>Admin account</a></span>
                 <span><a href="admin/register.php"><i class="fa fa-sign-in"></i>Register</a></span>
-                <span><a href=""><i class="fa fa-check-square-o"></i>Checkout</a></span>
+                <span class="d-none d-md-block"><a href=""><i class="fa fa-check-square-o"></i>Checkout</a></span>
             </div>
         </div>
     </div>
@@ -31,28 +31,30 @@
     <div class="container-fluid logo_bar">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12 text-center">
                     <form class="form-inline my-2 my-lg-0">
                         <div class="search">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                            <a href=""><i class="fa fa-search"></i></a>
+                            <!-- <a href=""><i class="fa fa-search"></i></a>1122
+                             -->
 
                         </div>
                     </form>
                 </div>
-                <div class="col-md-4 text-center ">
+                <div class="col-md-4 col-sm-12 text-center ">
                     <div class="logo_img">
                         <img src="src/logo.png" alt="">
                     </div>
                 </div>
-                <div class="col-md-4 pull-right">
-                    <div class="card_details">
+                <div class="col-md-4 pull-right d-none d-md-block">
+                    <div class="card_details ">
                         <a href=""><i class="fa fa-credit-card"></i>Cart-Details</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!--    start of nav bar -->
     <div class="container margin-nav">
@@ -61,7 +63,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-11 text-uppercase">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:40px;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -221,10 +223,10 @@
                             <div class="col-md-4">
                                 <h1 id="contactus">CONTACT US</h1>
 
-                                <p> <i class="fa fa-home"></i>Our business address is fruit organic shop,Main Market university of agriculture Faisalabad.</p>
+                                <p> <i class="fa fa-home"></i>Our business address is fruit organic shop,Main Market Faisalabad.</p>
                                 <p><i class="fa fa-mobile"></i>+923034766669</p>
-                                <p><i class="fa fa-envelope"></i>rana.naveed812@gmail.com</p>
-                                <p>For Product Registration and general enquires please <a href="mailto:rana.naveed812@gmail.com" style="color: #66CC33;">contact us</a>.</p>
+                                <p><i class="fa fa-envelope"></i>fruitorganic@gmail.com</p>
+                                <p>For Product Registration and general enquires please <a href="mailto:rfruitorganic@gmail.com" style="color: #66CC33;">contact us</a>.</p>
                             </div>
 
                         </div>
@@ -256,7 +258,7 @@
                 <div class="container margin ">
                     <div class="row text-center">
                         <div class="col-md-12">
-                            <p> Copyright © 2017 Fruit Store - All Rights Reserved.</p>
+                            <p> Copyright © 2020 Fruit Store - All Rights Reserved.</p>
                             <a href=""><span style="border-right:2px solid #66CC33;padding: 5px;">Privacy Policy</span> Term  Conditions</a>
                         </div>
                     </div>

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 12, 2018 at 02:22 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Host: localhost
+-- Generation Time: Jul 05, 2020 at 01:18 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,23 +34,8 @@ CREATE TABLE `customers` (
   `address` text NOT NULL,
   `customer_account` varchar(100) NOT NULL,
   `paid` int(11) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`id`, `customer_name`, `customer_number`, `address`, `customer_account`, `paid`, `timestamp`) VALUES
-(14, 'umair', '03137800039', 'kamalaya', '2228555358125', 0, '2018-01-08 09:05:41'),
-(15, 'manzar', '03452255664', 'jhang', '252548522455', 0, '2018-01-08 09:06:37'),
-(17, 'umair Rana', '03007563225', 'Islamabad', '332654282', 0, '2018-01-08 09:09:38'),
-(18, 'usaman mehmood', '03034578796', 'faisalabad', '54487985632121', 0, '2018-01-08 09:55:51'),
-(19, 'naveed ran', '32423424', 'gujaranwalla', '243032490-23940-', 0, '2018-01-11 16:24:20'),
-(20, 'naveed ran', '32423424', 'gujaranwalla', '243032490-23940-', 0, '2018-01-11 16:26:59'),
-(21, 'umar', '03035869789', 'Gujranwala', '5468985623564', 0, '2018-01-11 16:33:44'),
-(22, 'umar', '03035869789', 'Gujranwala', '5468985623564', 0, '2018-01-11 16:38:33'),
-(23, 'umer', '952908825', '9285903852', '8530925894', 2400, '2018-01-11 16:39:57');
 
 -- --------------------------------------------------------
 
@@ -66,20 +50,8 @@ CREATE TABLE `delivered` (
   `address` varchar(200) NOT NULL,
   `customer_account` varchar(200) NOT NULL,
   `postman` varchar(100) NOT NULL,
-  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `delivered`
---
-
-INSERT INTO `delivered` (`id`, `customer_name`, `customer_number`, `address`, `customer_account`, `postman`, `datetime`) VALUES
-(1, 'naveed', '03034766669', 'fasalabad', '655656985623', 'naveed', '2018-01-08 04:13:02'),
-(2, 'hassam', '65532262', 'faisalabad', '875412245522', 'umar  saikhu', '2018-01-08 09:17:20'),
-(3, 'hassam', '65532262', 'faisalabad', '875412245522', 'naveed', '2018-01-08 09:17:34'),
-(4, 'hassam', '65532262', 'faisalabad', '875412245522', 'naveed', '2018-01-08 09:56:29'),
-(5, 'umair', '03137800039', 'kamalaya', '2228555358125', 'naveed', '2018-01-08 10:05:08'),
-(6, 'umair', '03137800039', 'kamalaya', '2228555358125', 'naveed', '2018-01-11 18:13:44');
 
 -- --------------------------------------------------------
 
@@ -94,7 +66,7 @@ CREATE TABLE `fruits` (
   `fruit_price` int(11) NOT NULL,
   `fruit_img` varchar(200) NOT NULL,
   `admin_name` varchar(100) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -133,7 +105,7 @@ CREATE TABLE `users` (
   `user_name` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `img` varchar(200) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -141,9 +113,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `password`, `img`, `timestamp`) VALUES
-(1, 'naveed', '$2y$10$QjtCU50zJnURK8IFffst7e.SAIyA4c16gAZrIusXQtz9kXaeqrQLq', 'FB_IMG_1440930802437.jpg', '2018-01-06 12:40:44'),
-(6, 'Umar', '$2y$10$dbMyVMrTELmGBurV.bgmOOcDoetZJJRnyvT9rhoTwQz2ov4VBQr7y', 'IMG_20171017_213458.jpg', '2018-01-08 09:12:58'),
-(7, 'umar  saikhu', '$2y$10$jR0h5hJ0kTeLZOvAj8x9IuY5pw0wOnj7I.GnLxmW5ZRcdYbrwh/ia', 'B612_20170318_101028.jpg', '2018-01-08 09:16:20');
+(1, 'hamza', 'hamza332', 'hamza.jpg', '2018-01-06 12:40:44'),
+(6, 'shamaz', 'shamaz332', 'shamaz.png', '2018-01-08 09:12:58'),
+(8, 'haris', '$2y$10$SP5cwHvOBEcdcBqn2L7gUefoGL0p42GeIait/itV61/aA96PJNaNu', 'haris.jpg', '2020-07-05 10:23:57');
 
 -- --------------------------------------------------------
 
@@ -156,7 +128,7 @@ CREATE TABLE `user_request` (
   `user_name` varchar(100) NOT NULL,
   `user_pass` varchar(100) NOT NULL,
   `img` varchar(200) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -201,31 +173,31 @@ ALTER TABLE `user_request`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `delivered`
 --
 ALTER TABLE `delivered`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `fruits`
 --
 ALTER TABLE `fruits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_request`
 --
 ALTER TABLE `user_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

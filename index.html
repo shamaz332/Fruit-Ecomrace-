@@ -16,14 +16,14 @@
     <!--this is top bar-->
     <div class="container">
         <div class="row pad-normal">
-            <div class="col-md-6 text-left languages">
+            <div class="col-md-6 text-left languages d-none d-md-block">
                 <span><a href="#"><i class="fa fa-language"></i>English</a></span>
                 <span><a href="#"><i class="fa fa-money"></i>Rupee</a></span>
             </div>
             <div class="col-md-6 text-right Accounts">
                 <span><a href="admin/index.php"><i class="fa fa-user"></i>Admin account</a></span>
                 <span><a href="admin/register.php"><i class="fa fa-sign-in"></i>Register</a></span>
-                <span><a href=""><i class="fa fa-check-square-o"></i>Checkout</a></span>
+                <span class="d-none d-md-block"><a href=""><i class="fa fa-check-square-o"></i>Checkout</a></span>
             </div>
         </div>
     </div>
@@ -31,22 +31,23 @@
     <div class="container-fluid logo_bar">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12 text-center">
                     <form class="form-inline my-2 my-lg-0">
                         <div class="search">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                            <a href=""><i class="fa fa-search"></i></a>
+                            <!-- <a href=""><i class="fa fa-search"></i></a>1122
+                             -->
 
                         </div>
                     </form>
                 </div>
-                <div class="col-md-4 text-center ">
+                <div class="col-md-4 col-sm-12 text-center ">
                     <div class="logo_img">
                         <img src="src/logo.png" alt="">
                     </div>
                 </div>
-                <div class="col-md-4 pull-right">
-                    <div class="card_details">
+                <div class="col-md-4 pull-right d-none d-md-block">
+                    <div class="card_details ">
                         <a href=""><i class="fa fa-credit-card"></i>Cart-Details</a>
                     </div>
                 </div>
@@ -61,7 +62,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-11 text-uppercase">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:40px;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -115,17 +116,17 @@
             <div class="carousel-item active">
 
                 <img src="src/slide1.jpg" alt="slider">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-sm-block">
                     <h5>FRESH FRUIT</h5>
                     <h1 class="animated flash">BIG SALE</h1>
-                    <p class="animated shake">UPTO 30% OFF ON ALL FRUIT </p><br>
+                    <p class="animated shake ">UPTO 30% OFF ON ALL FRUIT </p><br>
                     <a href="shopnow.php">SHOP NOW</a>
                 </div>
 
             </div>
             <div class="carousel-item">
                 <img src="src/slide2.jpg" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-sm-block">
                     <h5>FRESH FRUIT</h5>
                     <h1 class="animated shake">BIG SALE</h1>
                     <p class="animated flash">UPTO 30% OFF ON ALL FRUIT </p><br>
@@ -134,7 +135,7 @@
             </div>
             <div class="carousel-item">
                 <img src="src/slide3.jpg" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-sm-block">
                     <h5>FRESH FRUIT</h5>
                     <h2 class="animated tada">UPTO 30% OFF </h2>
                     <p>LIMTTED STOCK ARE AVAILABLE</p> <br>
@@ -160,7 +161,7 @@
                     <div class="col-md-4 text-center">
                         <i class="fa fa-bus"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 text-center">
                         <h5>Free Shipping</h5>
                         <p>With 50 or less orders</p>
                     </div>
@@ -173,7 +174,7 @@
                     <div class="col-md-4 text-center">
                         <i class="fa fa-refresh"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 text-center">
                         <h5>Free Refund</h5>
                         <p>100% Refund Within 3 days</p>
                     </div>
@@ -186,7 +187,7 @@
                     <div class="col-md-4 text-center">
                         <i class="fa fa-phone"></i>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 text-center">
                         <h5>Support 24.7</h5>
                         <p>Call us anytime you want</p>
                     </div>
@@ -268,7 +269,7 @@
         </div>
         <!--    end of products-->
         <h1 id="locate" style="text-align: center;font-weight: bold; margin-top: 5px;">LOCATE US</h1>
-        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.388057375771!2d73.06732281460191!3d31.43098208139922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922429065ab4f41%3A0x3a567c6cab2e2c63!2sUniversity+Of+Agriculture+Faisalabad!5e0!3m2!1sen!2s!4v1515691726681" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.262827405211!2d73.146415214681!3d31.46195545717313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922691075c289bf%3A0xd48f8a2cd3c489f8!2sNational%20Textile%20University!5e0!3m2!1sen!2s!4v1593933148714!5m2!1sen!2s" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
 
         <!--    footer of the web-->
         <div class="container-fluid  bg-color">
@@ -293,10 +294,10 @@
                     <div class="col-md-4">
                         <h1 id="contactus">CONTACT US</h1>
 
-                        <p> <i class="fa fa-home"></i>Our business address is fruit organic shop,Main Market university of agriculture Faisalabad.</p>
-                        <p><i class="fa fa-mobile"></i>+923034766669</p>
-                        <p><i class="fa fa-envelope"></i>rana.naveed812@gmail.com</p>
-                        <p>For Product Registration and general enquires please <a href="mailto:rana.naveed812@gmail.com" style="color: #66CC33;">contact us</a>.</p>
+                        <p> <i class="fa fa-home"></i>Our business address is fruit organic shop,Main Market.</p>
+                        <p><i class="fa fa-mobile"></i>+923000000000</p>
+                        <p><i class="fa fa-envelope"></i>fruitorganic@gmail.com</p>
+                        <p>For Product Registration and general enquires please <a href="mailto:fruitorganic@gmail.com" style="color: #66CC33;">contact us</a>.</p>
                     </div>
 
                 </div>
@@ -328,7 +329,7 @@
         <div class="container margin ">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <p> Copyright © 2017 Fruit Store - All Rights Reserved.</p>
+                    <p> Copyright © 2020 Fruit Store - All Rights Reserved.</p>
                     <a href=""><span style="border-right:2px solid #66CC33;padding: 5px;">Privacy Policy</span> Term  Conditions</a>
                 </div>
             </div>

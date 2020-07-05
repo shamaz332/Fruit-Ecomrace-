@@ -24,7 +24,7 @@ if(isset($_POST['login_btn']))
          $db_name = $row['user_name'];
          $db_pass = $row['password'];
 
-         if (password_verify($password, $db_pass) && $db_name == $name) {
+         if ($db_pass==$password && $db_name == $name) {
 
 
            $login_obj->setsession($db_name);

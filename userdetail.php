@@ -202,7 +202,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Address:</label>
-                    <input type="text" class="form-control" id="" placeholder="e.g uaf faislabad" name="address" required>
+                    <input type="text" class="form-control" id="" placeholder="e.gfaislabad" name="address" required>
                 </div>
                 <div class="form-group">
                     <label for="">Account:</label>
@@ -248,9 +248,9 @@
                         <h1 id="contactus">CONTACT US</h1>
 
                         <p> <i class="fa fa-home"></i>Our business address is fruit organic shop,Main Market university of agriculture Faisalabad.</p>
-                        <p><i class="fa fa-mobile"></i>+923034766669</p>
-                        <p><i class="fa fa-envelope"></i>rana.naveed812@gmail.com</p>
-                        <p>For Product Registration and general enquires please <a href="mailto:rana.naveed812@gmail.com" style="color: #66CC33;">contact us</a>.</p>
+                        <p><i class="fa fa-mobile"></i>+000000000</p>
+                        <p><i class="fa fa-envelope"></i>fruitorganic@gmail.com</p>
+                        <p>For Product Registration and general enquires please <a href="mailto:fruitorganic@gmail.com" style="color: #66CC33;">contact us</a>.</p>
                     </div>
 
                 </div>
