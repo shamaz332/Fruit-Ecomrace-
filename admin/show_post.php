@@ -125,7 +125,7 @@ require_once ('include/connection.php');
             <!-- To the right -->
 
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2017 <a href="#">fruitorganic</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2020 <a href="#">fruitorganic</a>.</strong> All rights reserved.
         </footer>
 
 

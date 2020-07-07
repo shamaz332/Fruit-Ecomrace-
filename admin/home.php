@@ -84,6 +84,22 @@ require_once ('include/header.php');
                     <a href="message.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+
+
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>Delete</h3>
+
+                        <p>Delete Data</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cut" aria-hidden="true"></i>
+                    </div>
+                    <a href="delete_post.php" class="small-box-footer">Delete Fruits <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
             <!-- ./col -->
         </div>
 
@@ -170,6 +186,7 @@ require_once ('include/header.php');
                                             <th>Number</th>
                                             <th>Address</th>
                                             <th>DateTime</th>
+                                            <th>Amount</th>
                                             <th>Status</th>
                                             <th>Delivered</th>
 
@@ -182,6 +199,7 @@ require_once ('include/header.php');
                $customer_number = $row['customer_number'];
                 	$address = $row['address'];
                $datetime = $row['timestamp'];
+               $total = $row['paid'];
 
 
       ?>
@@ -195,11 +213,16 @@ require_once ('include/header.php');
                                                 <td>
                                                     <?php echo $customer_number; ?>
                                                 </td>
+                                      
                                                 <td>
                                                     <?php echo $address; ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $datetime; ?>
+                                                </td>
+                                                <td>
+                                                RS : 
+                                                    <?php echo $total; ?>
                                                 </td>
                                                 <td>
                                                     In processing!
