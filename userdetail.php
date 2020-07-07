@@ -167,7 +167,7 @@
             if($total == 0) 
             {
                
-                    echo "<p style='color:red'>please select at least one item!</p>";
+                    // echo "<p style='color:red'>please select at least one item!</p>";
               
                 
                echo '<h1 style=" margin-top: 20px;
