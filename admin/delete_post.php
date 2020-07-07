@@ -20,7 +20,7 @@ require_once 'include/connection.php';
     <?php
 
 
-$query = "SELECT * FROM `fruits` where `fruit_type`= 'Fresh Fruit'";
+$query = "SELECT * FROM `fruits` where `fruit_type`= 'Fresh Fruit' & 'Dry Fruit'";
 $queryexec = mysqli_query($con, $query);
 
 if (mysqli_num_rows($queryexec) > 0) {
@@ -35,7 +35,7 @@ if (mysqli_num_rows($queryexec) > 0) {
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">Id</th>
                                     <th scope="col">Fresh Fruit</th>
                                     <th scope="col">Image</th>
                               
@@ -56,7 +56,7 @@ if (mysqli_num_rows($queryexec) > 0) {
 
 
                                         <th scope="row">
-                                            <?php echo ++$id; ?>
+                                            <?php echo $id; ?>
                                         </th>
                                         <td>
 
@@ -102,7 +102,7 @@ if (mysqli_num_rows($queryexec) > 0) {
                         <?php
 
 if (isset($_POST['del'])) {
-    $id = $_POST['heading'];
+    $id = $_POST['id'];
 
     // $admin = $_SESSION['name'];
 
@@ -125,7 +125,7 @@ if (isset($_POST['del'])) {
 
                             <div class="form-group">
                                 <label>Fruit Id:</label>
-                                <input type="text" name="heading" id="input" class="form-control" required="required" placeholder="Fruit ID">
+                                <input type="text" name="id" id="input" class="form-control" required="required" placeholder="Fruit ID">
 
                             </div>
 
@@ -133,7 +133,7 @@ if (isset($_POST['del'])) {
 
                             <div class="form-group">
 
-                                <button type="submit" name="del" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="del" class="btn btn-primary">Delete</button>
 
                             </div>
                     </form>

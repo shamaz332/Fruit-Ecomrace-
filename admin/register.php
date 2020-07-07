@@ -16,7 +16,7 @@ if(isset($_SESSION["login"]))
     if (isset($_FILES['file'])) {
 
     $target_dir = "upload/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+    $target_file = $target_dir.basename($_FILES["file"]["name"]);
       
 
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
@@ -25,12 +25,9 @@ if(isset($_SESSION["login"]))
       $filename  = $_FILES["file"]["name"];
       $username = htmlspecialchars($_POST['name']);
       $userpass = htmlspecialchars($_POST['password']);
-      $userpass =  password_hash($userpass, PASSWORD_DEFAULT);
+    //   $userpass =  password_hash($userpass, PASSWORD_DEFAULT);
       $sql = "INSERT INTO `user_request`( `user_name`, `user_pass`, `img` ) VALUES ('$username','$userpass','$filename')";
       $run = mysqli_query($con,$sql);
-
-
-
       }
       }
 
@@ -72,7 +69,7 @@ if(isset($_SESSION["login"]))
 
   if (isset($_POST['reg_btn'])) {
     if ($moved && $run) {
-      echo "<center><h3 style='color:green;padding:10px;border:5px solid green'>Your Account Request has been send out to Our Admin thank You!</h3></center>";
+      echo "<center><h3 style='color:white;padding:10px;border:5px solid green'>Your Account Request has been send out to Our Admin thank You!</h3></center>";
     }
   }
 

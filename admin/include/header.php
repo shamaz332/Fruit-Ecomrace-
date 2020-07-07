@@ -2,9 +2,9 @@
 <?php
 
 if (isset($_POST['logout'])) {
-  session_destroy();
-  header('Location: index.php ');
-  exit;
+    session_destroy();
+    header('Location: index.php ');
+    exit;
 }
 
 
@@ -15,7 +15,7 @@ if (isset($_POST['logout'])) {
 
 $name = $_SESSION['name'];
  $sql = "SELECT `img` FROM `users` WHERE user_name = '$name'";
- $run = mysqli_query($con,$sql);
+ $run = mysqli_query($con, $sql);
  $img = mysqli_fetch_array($run);
 
 

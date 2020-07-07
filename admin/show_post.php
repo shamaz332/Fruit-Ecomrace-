@@ -3,14 +3,13 @@
 session_start();
 session_regenerate_id();
 
-if(!isset($_SESSION["login"]))
-{
-  header('Location: index.php');
-  exit;
+if (!isset($_SESSION["login"])) {
+    header('Location: index.php');
+    exit;
 }
 
-require_once ('include/header.php');
-require_once ('include/connection.php');
+require_once('include/header.php');
+require_once('include/connection.php');
 ?>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -34,13 +33,10 @@ require_once ('include/connection.php');
                     <?php
 
              $query = "SELECT * FROM `delivered`";
-            $run = mysqli_query($con,$query);
+            $run = mysqli_query($con, $query);
 
-             if(mysqli_num_rows($run) > 0){
-
-
-
-             ?>
+             if (mysqli_num_rows($run) > 0) {
+                 ?>
 
                         <div class="box-body table-responsive no-padding">
                             <table class="table table-hover text-center">
@@ -51,6 +47,7 @@ require_once ('include/connection.php');
                                         <th>Number</th>
                                         <th>Account</th>
                                         <th>Address</th>
+                                        <th>Price</th>
                                         <th>Post Man</th>
                                         <th>DateTime</th>
                                         <th>Status</th>
@@ -61,15 +58,12 @@ require_once ('include/connection.php');
 
       while ($row = mysqli_fetch_array($run)) {
           $userid = $row['id'];
-             $customer_name = $row['customer_name'];
-               $customer_number = $row['customer_number'];
-             $customer_account = $row['customer_account'];
-                	$address = $row['address'];
+          $customer_name = $row['customer_name'];
+          $customer_number = $row['customer_number'];
+          $customer_account = $row['customer_account'];
+          $address = $row['address'];
           $postman = $row['postman'];
-               $datetime = $row['datetime'];
-
-
-      ?>
+          $datetime = $row['datetime']; ?>
 
                                         <tr>
                                             <td>
@@ -99,8 +93,7 @@ require_once ('include/connection.php');
 
                                         </tr>
                                         <?php
-}
-                 ?>
+      } ?>
 
                                 </tbody>
                             </table>
@@ -114,9 +107,8 @@ require_once ('include/connection.php');
     </div>
 
     <?php
-}
-  else {
-    echo "<center><h3>No Pending Request available</h3></center>";
+             } else {
+      echo "<center><h3>No Pending Request available</h3></center>";
   }
    ?>
 

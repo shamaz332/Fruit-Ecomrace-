@@ -88,16 +88,33 @@ require_once ('include/header.php');
 
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+                <div class="small-box bg-yellow" >
                     <div class="inner">
-                        <h3>Delete</h3>
+                        <h3 style="color:white">Delete</h3>
 
-                        <p>Delete Data</p>
+                        <p style="color:white">Delete Data</p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-cut" aria-hidden="true"></i>
                     </div>
                     <a href="delete_post.php" class="small-box-footer">Delete Fruits <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <!-- update tab   -->
+
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3>Update</h3>
+
+                        <p>Update Data</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-cut" aria-hidden="true"></i>
+                    </div>
+                    <a href="update_post.php" class="small-box-footer">Updaet Fruits <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
