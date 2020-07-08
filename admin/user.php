@@ -3,14 +3,13 @@
 session_start();
 session_regenerate_id();
 
-if(!isset($_SESSION["login"]))
-{
-  header('Location: index.php');
-  exit;
+if (!isset($_SESSION["login"])) {
+    header('Location: index.php');
+    exit;
 }
 
-require_once ('include/header.php');
-require_once ('include/connection.php');
+require_once('include/header.php');
+require_once('include/connection.php');
 ?>
 
 
@@ -20,60 +19,43 @@ require_once ('include/connection.php');
           $id = $_GET['approve'];
 
           $sql = "SELECT * FROM `user_request` WHERE $id";
-          $run = mysqli_query($con,$sql);
-           if ($row = mysqli_fetch_array($run)) {
-
-            $username = $row['user_name'];
-            $userpass = $row['user_pass'];
-            $userimg = $row['img'];
-
-
-            $sql = "INSERT INTO `users`( `user_name`, `password`, `img`) VALUES ('$username','$userpass','$userimg')";
-            $run = mysqli_query($con,$sql);
-
-           if ($run) {
-             $sql = "DELETE FROM `user_request` WHERE id=$id";
-             $run = mysqli_query($con,$sql);
-             if ($run) {
-               echo "<center><h3 style='color:green'>Successfully Approved</h3></center>";
-
-             }
-             else {
-               echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
-
-             }
-           }
-    else {
-    echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
-    }
-
-           }
-
-           else {
-             echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
-           }
+          $run = mysqli_query($con, $sql);
+          if ($row = mysqli_fetch_array($run)) {
+              $username = $row['user_name'];
+              $userpass = $row['user_pass'];
+              $userimg = $row['img'];
 
 
+              $sql = "INSERT INTO `users`( `user_name`, `password`, `img`) VALUES ('$username','$userpass','$userimg')";
+              $run = mysqli_query($con, $sql);
 
-
-
+              if ($run) {
+                  $sql = "DELETE FROM `user_request` WHERE id=$id";
+                  $run = mysqli_query($con, $sql);
+                  if ($run) {
+                      echo "<center><h3 style='color:green'>Successfully Approved</h3></center>";
+                  } else {
+                      echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
+                  }
+              } else {
+                  echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
+              }
+          } else {
+              echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
+          }
       }
 
       if (isset($_GET['del'])) {
-        $id = $_GET['del'];
+          $id = $_GET['del'];
        
-        $sql = "DELETE FROM `user_request` WHERE id=$id";
-           $run = mysqli_query($con,$sql);
-           if ($run) {
-            echo "<center><h3 style='color:green;padding:10px;border:5px solid green'>Sucessfully Deleted!.</h3></center>";
-
-           }
-           else {
-            echo "<center><h3 style='color:red;padding:10px;border:5px solid red'>Error occor while Delete Request Pleas Try again</h3></center>";
-
-           }
-
-    }
+          $sql = "DELETE FROM `user_request` WHERE id=$id";
+          $run = mysqli_query($con, $sql);
+          if ($run) {
+              echo "<center><h3 style='color:green;padding:10px;border:5px solid green'>Sucessfully Deleted!.</h3></center>";
+          } else {
+              echo "<center><h3 style='color:red;padding:10px;border:5px solid red'>Error occor while Delete Request Pleas Try again</h3></center>";
+          }
+      }
 
  ?>
         <ol class="breadcrumb">
@@ -98,13 +80,10 @@ require_once ('include/connection.php');
                         <?php
 
              $query = "SELECT * FROM `user_request`";
-             $run = mysqli_query($con,$query);
+             $run = mysqli_query($con, $query);
 
-             if(mysqli_num_rows($run) > 0){
-
-
-
-             ?>
+             if (mysqli_num_rows($run) > 0) {
+                 ?>
 
                             <div class="box-body table-responsive no-padding">
                                 <table class="table table-hover text-center">
@@ -122,12 +101,9 @@ require_once ('include/connection.php');
 
       while ($row = mysqli_fetch_array($run)) {
           $userid = $row['id'];
-             $username = $row['user_name'];
-               $userimg = $row['img'];
-                $date = $row['timestamp'];
-
-
-      ?>
+          $username = $row['user_name'];
+          $userimg = $row['img'];
+          $date = $row['timestamp']; ?>
 
                                             <tr>
                                                 <td>
@@ -152,8 +128,7 @@ require_once ('include/connection.php');
                                                 </td>
                                             </tr>
                                             <?php
-}
-                 ?>
+      } ?>
 
                                     </tbody>
                                 </table>
@@ -167,9 +142,8 @@ require_once ('include/connection.php');
         </div>
 
         <?php
-}
-  else {
-    echo "<center><h3>No Pending Request available</h3></center>";
+             } else {
+      echo "<center><h3>No Pending Request available</h3></center>";
   }
    ?>
             <!-- /.content-wrapper -->

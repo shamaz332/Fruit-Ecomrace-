@@ -4,34 +4,30 @@ session_start();
 session_regenerate_id();
 
 
-if(isset($_SESSION["login"]))
-{
-  header('Location: home.php');
-  exit;
+if (isset($_SESSION["login"])) {
+    header('Location: home.php');
+    exit;
 }
  require_once 'include/connection.php';
 
   $moved = false;
   if (isset($_POST['reg_btn'])) {
-    if (isset($_FILES['file'])) {
-
-    $target_dir = "upload/";
-    $target_file = $target_dir.basename($_FILES["file"]["name"]);
+      if (isset($_FILES['file'])) {
+          $target_dir = "upload/";
+          $target_file = $target_dir.basename($_FILES["file"]["name"]);
       
 
-    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-
-      $moved = true;
-      $filename  = $_FILES["file"]["name"];
-      $username = htmlspecialchars($_POST['name']);
-      $userpass = htmlspecialchars($_POST['password']);
-    //   $userpass =  password_hash($userpass, PASSWORD_DEFAULT);
-      $sql = "INSERT INTO `user_request`( `user_name`, `user_pass`, `img` ) VALUES ('$username','$userpass','$filename')";
-      $run = mysqli_query($con,$sql);
+          if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+              $moved = true;
+              $filename  = $_FILES["file"]["name"];
+              $username = htmlspecialchars($_POST['name']);
+              $userpass = htmlspecialchars($_POST['password']);
+              //   $userpass =  password_hash($userpass, PASSWORD_DEFAULT);
+              $sql = "INSERT INTO `user_request`( `user_name`, `user_pass`, `img` ) VALUES ('$username','$userpass','$filename')";
+              $run = mysqli_query($con, $sql);
+          }
       }
-      }
-
-}
+  }
 
 
 
@@ -68,9 +64,9 @@ if(isset($_SESSION["login"]))
                     <?php
 
   if (isset($_POST['reg_btn'])) {
-    if ($moved && $run) {
-      echo "<center><h3 style='color:white;padding:10px;border:5px solid green'>Your Account Request has been send out to Our Admin thank You!</h3></center>";
-    }
+      if ($moved && $run) {
+          echo "<center><h3 style='color:white;padding:10px;border:5px solid green'>Your Account Request has been send out to Our Admin thank You!</h3></center>";
+      }
   }
 
 
@@ -81,9 +77,9 @@ if(isset($_SESSION["login"]))
                 <h3>
                     <?php
   if (isset($_POST['reg_btn'])) {
-    if (!$moved || !$run) {
-      echo "Error occor! server has been down please try again";
-    }
+      if (!$moved || !$run) {
+          echo "Error occor! server has been down please try again";
+      }
   }
 
 

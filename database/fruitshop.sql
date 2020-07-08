@@ -49,6 +49,7 @@ CREATE TABLE `delivered` (
   `customer_number` varchar(100) NOT NULL,
   `address` varchar(200) NOT NULL,
   `customer_account` varchar(200) NOT NULL,
+    `customer_amount` varchar(200) NOT NULL,
   `postman` varchar(100) NOT NULL,
   `datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

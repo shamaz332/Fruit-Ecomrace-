@@ -2,13 +2,12 @@
 session_start();
 session_regenerate_id();
 
-if(!isset($_SESSION["login"]))
-{
-  header('Location: index.php');
-  exit;
+if (!isset($_SESSION["login"])) {
+    header('Location: index.php');
+    exit;
 }
-require_once ('include/header.php');
-require_once ('include/connection.php');
+require_once('include/header.php');
+require_once('include/connection.php');
 ?>
 
 
@@ -31,38 +30,30 @@ require_once ('include/connection.php');
                         <?php
 
     if (isset($_POST['post_submit'])) {
-      if (isset($_FILES['file'])) {
+        if (isset($_FILES['file'])) {
+            $target_dir = "upload/";
+            $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-      $target_dir = "upload/";
-      $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                $filename  = $_FILES["file"]["name"];
+                $heading = htmlspecialchars($_POST['heading']);
+                $price = htmlspecialchars($_POST['price']);
+                $type = $_POST['fruittype'];
+                $admin = $_SESSION['name'];
 
-      if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                $sql = "INSERT INTO `fruits`(`fruit_name`, `fruit_type`, `fruit_price`, `fruit_img`, `admin_name`) VALUES ('$heading','$type','$price','$filename','$admin')";
+                $run = mysqli_query($con, $sql);
 
-        $filename  = $_FILES["file"]["name"];
-        $heading = htmlspecialchars($_POST['heading']);
-        $price = htmlspecialchars($_POST['price']);
-         $type = $_POST['fruittype'];
-        $admin = $_SESSION['name'];
-
-        $sql = "INSERT INTO `fruits`(`fruit_name`, `fruit_type`, `fruit_price`, `fruit_img`, `admin_name`) VALUES ('$heading','$type','$price','$filename','$admin')";
-        $run = mysqli_query($con,$sql);
-
-         if ($run) {
-           echo "<center><h3 style='color:green'>Successfully Posted!</h3></center>";
-
-         }
-         else {
-           echo "<center><h3 style='color:red'>Sorry Error has been eccor! Please try again.</h3></center>";
-         }
-
-      }
-   else {
-     echo "<center><h3 style='color:red'>Sorry Error has been eccor! Please try again.</h3></center>";
-
-   }
+                if ($run) {
+                    echo "<center><h3 style='color:green'>Successfully Posted!</h3></center>";
+                } else {
+                    echo "<center><h3 style='color:red'>Sorry Error has been eccor! Please try again.</h3></center>";
+                }
+            } else {
+                echo "<center><h3 style='color:red'>Sorry Error has been eccor! Please try again.</h3></center>";
+            }
         }
-
     }
 
 

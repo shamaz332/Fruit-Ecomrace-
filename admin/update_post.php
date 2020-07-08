@@ -67,14 +67,12 @@ if (mysqli_num_rows($queryexec) > 0) {
   </label> </td>
                                         <td>
                                             <img src="upload/<?php echo $img; ?>" alt="image" width="40px" height="40px">
-                                        </td>
-
-                                        
+        
                                     </tr>
                                     <?php
     } ?>
 
-                                        <!--                           bnana-->
+<!-- bnana-->
 
 
                             </tbody>
@@ -102,39 +100,29 @@ if (mysqli_num_rows($queryexec) > 0) {
                         <?php
 
     if (isset($_POST['post_update'])) {
-    //   if (isset($_FILES['file'])) {
+        //   if (isset($_FILES['file'])) {
 
-    //   $target_dir = "./upload/";
-    //   $target_file = $target_dir . basename($_FILES["file"]["name"]);
+        //   $target_dir = "./upload/";
+        //   $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
 
-    //   if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+        //   if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
         $id = $_POST['id'];
         // $filename  = $_FILES["file"]["name"];
         $heading = htmlspecialchars($_POST['heading']);
         $price =$_POST['price'];
-         $type = $_POST['fruittype'];
+        $type = $_POST['fruittype'];
         $admin = $_SESSION['name'];
 
         $sql = "UPDATE fruits SET fruit_name='$heading', fruit_price='$price',fruit_type='$type' WHERE id='$id'";
-        $run = mysqli_query($con,$sql);
+        $run = mysqli_query($con, $sql);
 
-         if ($run) {
-           echo "<center><h3 style='color:green'>Successfully Posted!</h3></center>";
-
-         }
-         else {
-           echo "<center><h3 style='color:red'>Sorry Error has been eccor! Please try again.</h3></center>";
-         }
-
-      
-
-        
-
+        if ($run) {
+            echo "<center><h3 style='color:green'>Successfully Posted!</h3></center>";
+        } else {
+            echo "<center><h3 style='color:red'>Sorry Error has been eccor! Please try again.</h3></center>";
+        }
     }
-
-
-
     ?>
 
 <div class="form-group">

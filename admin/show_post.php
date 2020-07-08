@@ -61,6 +61,7 @@ require_once('include/connection.php');
           $customer_name = $row['customer_name'];
           $customer_number = $row['customer_number'];
           $customer_account = $row['customer_account'];
+          $customer_amount = $row['customer_amount'];
           $address = $row['address'];
           $postman = $row['postman'];
           $datetime = $row['datetime']; ?>
@@ -79,6 +80,10 @@ require_once('include/connection.php');
                                             </td>
                                             <td>
                                                 <?php echo $address; ?>
+                                            </td>
+                                            <td>
+                                            RS :
+                                                <?php echo $customer_amount; ?>
                                             </td>
                                             <td>
                                                 <?php echo $postman; ?>
@@ -108,8 +113,8 @@ require_once('include/connection.php');
 
     <?php
              } else {
-      echo "<center><h3>No Pending Request available</h3></center>";
-  }
+                 echo "<center><h3>No Pending Request available</h3></center>";
+             }
    ?>
 
         <!-- Main Footer -->

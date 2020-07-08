@@ -1,53 +1,36 @@
 <?php
 session_start();
-if(isset($_SESSION["login"]))
-{
-
-  header('Location: home.php');
-  exit;
+if (isset($_SESSION["login"])) {
+    header('Location: home.php');
+    exit;
 }
 require_once 'classes/Login.php';
 require_once 'include/connection.php';
-if(isset($_POST['login_btn']))
-{
+if (isset($_POST['login_btn'])) {
+    $login_obj = new LoginClass;
+    $name = htmlspecialchars($_POST['name']);
+    $password = htmlspecialchars($_POST['password']);
 
-  $login_obj = new LoginClass;
-  $name = htmlspecialchars($_POST['name']);
-  $password = htmlspecialchars($_POST['password']);
+    $sql = "SELECT * FROM `users`";
+    $run = mysqli_query($con, $sql);
 
-  $sql = "SELECT * FROM `users`";
-  $run = mysqli_query($con,$sql);
+    if (mysqli_num_rows($run) > 0) {
+        while ($row = mysqli_fetch_array($run)) {
+            $db_name = $row['user_name'];
+            $db_pass = $row['password'];
 
-  if(mysqli_num_rows($run) > 0)
-  {
-   while ($row = mysqli_fetch_array($run)) {
-         $db_name = $row['user_name'];
-         $db_pass = $row['password'];
-
-         if ($db_pass==$password && $db_name == $name) {
-
-
-           $login_obj->setsession($db_name);
-           header('Location:  home.php');
-           exit;
-         }
+            if ($db_pass==$password && $db_name == $name) {
+                $login_obj->setsession($db_name);
+                header('Location:  home.php');
+                exit;
+            }
+        }
 
 
-
-   }
-
-
-   echo "<center><h3 style='color:red;padding:10px;border:5px solid red'>Invalid login, please try again</h3></center>";
-
-
-}
-
-
-
-else {
-  echo "<center><h3 style='color:red'>Sorry! there is no user Exits</h3></center>";
-}
-
+        echo "<center><h3 style='color:red;padding:10px;border:5px solid red'>Invalid login, please try again</h3></center>";
+    } else {
+        echo "<center><h3 style='color:red'>Sorry! there is no user Exits</h3></center>";
+    }
 }
 
  ?>

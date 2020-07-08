@@ -4,13 +4,12 @@
 session_start();
 session_regenerate_id();
 
-if(!isset($_SESSION["login"]))
-{
-  header('Location: index.php');
-  exit;
+if (!isset($_SESSION["login"])) {
+    header('Location: index.php');
+    exit;
 }
 
-require_once ('include/header.php');
+require_once('include/header.php');
 
 
 ?>
@@ -128,46 +127,34 @@ require_once ('include/header.php');
 
       if (isset($_GET['approve1'])) {
           $id = $_GET['approve1'];
-              $postman=$_SESSION["name"];
+          $postman=$_SESSION["name"];
           $sql = "SELECT * FROM `customers` WHERE $id";
-          $run = mysqli_query($con,$sql);
-           if ($row = mysqli_fetch_array($run)) {
-            
-          $customer_name = $row['customer_name'];
-               $customer_number = $row['customer_number'];
-                	$address = $row['address'];
-                    $customer_account = $row['customer_account'];
+          $run = mysqli_query($con, $sql);
+          if ($row = mysqli_fetch_array($run)) {
+              $customer_name = $row['customer_name'];
+              $customer_number = $row['customer_number'];
+              $address = $row['address'];
+              $customer_account = $row['customer_account'];
+              $customer_amount = $row['paid'];
                          
 
-            $sql = "INSERT INTO `delivered`( `customer_name`, `customer_number`,`address`, `customer_account`, `postman`) VALUES ('$customer_name','$customer_number','$address','$customer_account','$postman')";
-            $run = mysqli_query($con,$sql);
+              $sql = "INSERT INTO `delivered`( `customer_name`, `customer_number`,`address`, `customer_account`,`customer_amount`, `postman`) VALUES ('$customer_name','$customer_number','$address','$customer_account','$customer_amount','$postman')";
+              $run = mysqli_query($con, $sql);
 
-           if ($run) {
-             $sql = "DELETE FROM `customers` WHERE id=$id";
-             $run = mysqli_query($con,$sql);
-             if ($run) {
-               echo "<center><h3 style='color:green'>Successfully Approved</h3></center>";
-
-             }
-             else {
-               echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
-
-             }
-           }
-    else {
-    echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
-    }
-
-           }
-
-           else {
-             echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
-           }
-
-
-
-
-
+              if ($run) {
+                  $sql = "DELETE FROM `customers` WHERE id=$id";
+                  $run = mysqli_query($con, $sql);
+                  if ($run) {
+                      echo "<center><h3 style='color:green'>Successfully Approved</h3></center>";
+                  } else {
+                      echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
+                  }
+              } else {
+                  echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
+              }
+          } else {
+              echo "<center><h3 style='color:red'>Error occor while Approving Request Pleas Try again</h3></center>";
+          }
       }
 
  ?>
@@ -186,13 +173,10 @@ require_once ('include/header.php');
                         <?php
 
              $query = "SELECT * FROM `customers";
-             $run = mysqli_query($con,$query);
+             $run = mysqli_query($con, $query);
 
-             if(mysqli_num_rows($run) > 0){
-
-
-
-             ?>
+             if (mysqli_num_rows($run) > 0) {
+                 ?>
 
                             <div class="box-body table-responsive no-padding">
                                 <table class="table table-hover text-center">
@@ -212,14 +196,11 @@ require_once ('include/header.php');
 
       while ($row = mysqli_fetch_array($run)) {
           $userid = $row['id'];
-             $customer_name = $row['customer_name'];
-               $customer_number = $row['customer_number'];
-                	$address = $row['address'];
-               $datetime = $row['timestamp'];
-               $total = $row['paid'];
-
-
-      ?>
+          $customer_name = $row['customer_name'];
+          $customer_number = $row['customer_number'];
+          $address = $row['address'];
+          $datetime = $row['timestamp'];
+          $total = $row['paid']; ?>
 
                                             <tr>
                                                 <td>
@@ -252,8 +233,7 @@ require_once ('include/header.php');
 
                                             </tr>
                                             <?php
-}
-                 ?>
+      } ?>
 
                                     </tbody>
                                 </table>
@@ -267,9 +247,8 @@ require_once ('include/header.php');
         </div>
 
         <?php
-}
-  else {
-    echo "<center><h3>No Pending Request available</h3></center>";
+             } else {
+      echo "<center><h3>No Pending Request available</h3></center>";
   }
    ?>
 

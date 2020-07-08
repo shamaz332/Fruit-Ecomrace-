@@ -1,13 +1,12 @@
 <?php
 
 session_start();
-if(!isset($_SESSION["login"]))
-{
-  header('Location: index.php');
-  exit;
+if (!isset($_SESSION["login"])) {
+    header('Location: index.php');
+    exit;
 }
 
-require_once ('include/header.php');
+require_once('include/header.php');
 ?>
 
 
@@ -48,13 +47,10 @@ require_once ('include/header.php');
                                     <?php
 
              $query = "SELECT * FROM `customers";
-             $run = mysqli_query($con,$query);
+             $run = mysqli_query($con, $query);
 
-             if(mysqli_num_rows($run) > 0){
-
-
-
-             ?>
+             if (mysqli_num_rows($run) > 0) {
+                 ?>
 
                                         <div class="box-body table-responsive no-padding">
                                             <table class="table table-hover text-center">
@@ -73,13 +69,10 @@ require_once ('include/header.php');
 
       while ($row = mysqli_fetch_array($run)) {
           $userid = $row['id'];
-             $customer_name = $row['customer_name'];
-               $customer_number = $row['customer_number'];
-                	$address = $row['address'];
-               $datetime = $row['timestamp'];
-
-
-      ?>
+          $customer_name = $row['customer_name'];
+          $customer_number = $row['customer_number'];
+          $address = $row['address'];
+          $datetime = $row['timestamp']; ?>
 
                                                         <tr>
                                                             <td>
@@ -107,8 +100,7 @@ require_once ('include/header.php');
 
                                                         </tr>
                                                         <?php
-}
-                 ?>
+      } ?>
 
                                                 </tbody>
                                             </table>
@@ -122,9 +114,8 @@ require_once ('include/header.php');
                 </div>
 
                 <?php
-}
-  else {
-    echo "<center><h3>No Pending Request available</h3></center>";
+             } else {
+      echo "<center><h3>No Pending Request available</h3></center>";
   }
    ?>
 
